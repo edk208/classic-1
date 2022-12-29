@@ -51,6 +51,9 @@ endif
 ifeq (boltdb,$(findstring boltdb,$(COSMOS_BUILD_OPTIONS)))
   build_tags += boltdb
 endif
+ifeq (pebbledb,$(findstring pebbledb,$(COSMOS_BUILD_OPTIONS)))
+  build_tags += pebbledb
+endif
 
 build_tags += $(BUILD_TAGS)
 build_tags := $(strip $(build_tags))
@@ -87,6 +90,9 @@ endif
 # handle boltdb
 ifeq (boltdb,$(findstring boltdb,$(COSMOS_BUILD_OPTIONS)))
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=boltdb
+endif
+ifeq (pebbledb,$(findstring pebbledb,$(COSMOS_BUILD_OPTIONS)))
+  ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=pebbledb
 endif
 
 ifeq (,$(findstring nostrip,$(COSMOS_BUILD_OPTIONS)))
