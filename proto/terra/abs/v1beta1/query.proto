@@ -1,0 +1,51 @@
+syntax = "proto3";
+package terra.abs.v1beta1;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "terra/abs/v1beta1/params.proto";
+import "terra/abs/v1beta1/watchlist.proto";
+
+option go_package = "github.com/terra-money/core/x/abs/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Parameters queries the parameters of the module.
+  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/terra-money/core/abs/params";
+  }
+  
+  // Queries a list of QueryBreakFactor items.
+	rpc QueryBreakFactor(QueryBreakFactorRequest) returns (QueryBreakFactorResponse) {
+		option (google.api.http).get = "/terra-money/abs/query_break_factor";
+	}
+  
+  // Queries watchlist.
+	rpc QueryWatchlist(QueryWatchlistRequest) returns (QueryWatchlistResponse) {
+		option (google.api.http).get = "/terra-money/abs/query_watchlist";
+	}
+}
+
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  // params holds all the parameters of this module.
+  Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryBreakFactorRequest {
+}
+
+message QueryBreakFactorResponse {
+  string value = 1;
+}
+
+message QueryWatchlistRequest {
+}
+
+message QueryWatchlistResponse {
+  Watchlist watchlist = 1 [(gogoproto.nullable) = false];
+}

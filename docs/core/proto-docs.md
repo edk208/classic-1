@@ -812,6 +812,36 @@
     - [Header](#ibc.lightclients.tendermint.v1.Header)
     - [Misbehaviour](#ibc.lightclients.tendermint.v1.Misbehaviour)
   
+- [terra/abs/v1beta1/params.proto](#terra/abs/v1beta1/params.proto)
+    - [Params](#terra.abs.v1beta1.Params)
+
+- [terra/abs/v1beta1/genesis.proto](#terra/abs/v1beta1/genesis.proto)
+    - [GenesisState](#terra.abs.v1beta1.GenesisState)
+
+- [terra/abs/v1beta1/watchlist.proto](#terra/abs/v1beta1/watchlist.proto)
+    - [Watchlist](#terra.abs.v1beta1.Watchlist)
+    - [WatchlistEntry](#terra.abs.v1beta1.WatchlistEntry)
+
+- [terra/abs/v1beta1/query.proto](#terra/abs/v1beta1/query.proto)
+    - [QueryParamsRequest](#terra.abs.v1beta1.QueryParamsRequest)
+    - [QueryParamsResponse](#terra.abs.v1beta1.QueryParamsResponse)
+    - [QueryBreakFactorRequest](#terra.abs.v1beta1.QueryBreakFactorRequest)
+    - [QueryBreakFactorResponse](#terra.abs.v1beta1.QueryBreakFactorResponse)
+    - [QueryWatchlistRequest](#terra.abs.v1beta1.QueryWatchlistRequest)
+    - [QueryWatchlistResponse](#terra.abs.v1beta1.QueryWatchlistResponse)
+
+    - [Query](#terra.abs.v1beta1.Query)
+
+- [terra/abs/v1beta1/tx.proto](#terra/abs/v1beta1/tx.proto)
+    - [MsgUpdateBreakFactor](#terra.abs.v1beta1.MsgUpdateBreakFactor)
+    - [MsgUpdateBreakFactorResponse](#terra.abs.v1beta1.MsgUpdateBreakFactorResponse)
+
+    - [Msg](#terra.abs.v1beta1.Msg)
+
+- [terra/abs/v1beta1/watchlist.proto](#terra/abs/v1beta1/watchlist.proto)
+    - [Watchlist](#terra.abs.v1beta1.Watchlist)
+    - [WatchlistEntry](#terra.abs.v1beta1.WatchlistEntry)
+
 - [terra/market/v1beta1/market.proto](#terra/market/v1beta1/market.proto)
     - [Params](#terra.market.v1beta1.Params)
   
@@ -11973,6 +12003,293 @@ that implements Misbehaviour interface expected by ICS-02
 | `client_id` | [string](#string) |  |  |
 | `header_1` | [Header](#ibc.lightclients.tendermint.v1.Header) |  |  |
 | `header_2` | [Header](#ibc.lightclients.tendermint.v1.Header) |  |  |
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+<a name="terra/abs/v1beta1/params.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## terra/abs/v1beta1/params.proto
+
+
+
+<a name="terra.abs.v1beta1.Params"></a>
+
+### Params
+Params defines the parameters for the module.
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+<a name="terra/abs/v1beta1/genesis.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## terra/abs/v1beta1/genesis.proto
+
+
+
+<a name="terra.abs.v1beta1.GenesisState"></a>
+
+### GenesisState
+GenesisState defines the abs module's genesis state.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `params` | [Params](#terra.abs.v1beta1.Params) |  |  |
+
+
+<!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+<a name="terra/abs/v1beta1/watchlist.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## terra/abs/v1beta1/watchlist.proto
+
+
+
+<a name="terra.abs.v1beta1.Watchlist"></a>
+
+### Watchlist
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `entries` | [WatchlistEntry](#terra.abs.v1beta1.WatchlistEntry) | repeated |  |
+
+
+
+
+
+
+<a name="terra.abs.v1beta1.WatchlistEntry"></a>
+
+### WatchlistEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `address` | [string](#string) |  |  |
+| `blockHeight` | [uint64](#uint64) |  |  |
+| `transacted` | [uint64](#uint64) |  |  |
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+<a name="terra/abs/v1beta1/query.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## terra/abs/v1beta1/query.proto
+
+<a name="terra.abs.v1beta1.QueryBreakFactorRequest"></a>
+
+### QueryBreakFactorRequest
+
+
+
+
+
+
+
+<a name="terra.abs.v1beta1.QueryBreakFactorResponse"></a>
+
+### QueryBreakFactorResponse
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `value` | [string](#string) |  |  |
+
+
+<a name="terra.abs.v1beta1.QueryParamsRequest"></a>
+
+### QueryParamsRequest
+QueryParamsRequest is request type for the Query/Params RPC method.
+
+
+
+
+
+
+<a name="terra.abs.v1beta1.QueryParamsResponse"></a>
+
+### QueryParamsResponse
+QueryParamsResponse is response type for the Query/Params RPC method.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `params` | [Params](#terra.abs.v1beta1.Params) |  | params holds all the parameters of this module. |
+
+
+<a name="terra.abs.v1beta1.QueryWatchlistRequest"></a>
+
+### QueryWatchlistRequest
+
+
+
+
+
+
+
+<a name="terra.abs.v1beta1.QueryWatchlistResponse"></a>
+
+### QueryWatchlistResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `watchlist` | [Watchlist](#terra.abs.v1beta1.Watchlist) |  |  |
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+
+<a name="terra.abs.v1beta1.Query"></a>
+
+### Query
+Query defines the gRPC querier service.
+
+| Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
+| ----------- | ------------ | ------------- | ------------| ------- | -------- |
+| `Params` | [QueryParamsRequest](#terra.abs.v1beta1.QueryParamsRequest) | [QueryParamsResponse](#terra.abs.v1beta1.QueryParamsResponse) | Parameters queries the parameters of the module. | GET|/terra-money/core/abs/params|
+| `QueryBreakFactor` | [QueryBreakFactorRequest](#terra.abs.v1beta1.QueryBreakFactorRequest) | [QueryBreakFactorResponse](#terra.abs.v1beta1.QueryBreakFactorResponse) | Queries a list of QueryBreakFactor items. | GET|/terra-money/abs/query_break_factor|
+| `QueryWatchlist` | [QueryWatchlistRequest](#terra.abs.v1beta1.QueryWatchlistRequest) | [QueryWatchlistResponse](#terra.abs.v1beta1.QueryWatchlistResponse) | Queries watchlist. | GET|/terra-money/abs/query_watchlist|
+
+
+ <!-- end services -->
+
+
+
+<a name="terra/abs/v1beta1/tx.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## terra/abs/v1beta1/tx.proto
+
+
+
+<a name="terra.abs.v1beta1.MsgUpdateBreakFactor"></a>
+
+### MsgUpdateBreakFactor
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `creator` | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="terra.abs.v1beta1.MsgUpdateBreakFactorResponse"></a>
+
+### MsgUpdateBreakFactorResponse
+
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+
+<a name="terra.abs.v1beta1.Msg"></a>
+
+### Msg
+Msg defines the Msg service.
+
+| Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
+| ----------- | ------------ | ------------- | ------------| ------- | -------- |
+| `UpdateBreakFactor` | [MsgUpdateBreakFactor](#terra.abs.v1beta1.MsgUpdateBreakFactor) | [MsgUpdateBreakFactorResponse](#terra.abs.v1beta1.MsgUpdateBreakFactorResponse) | this line is used by starport scaffolding # proto/tx/rpc | |
+
+ <!-- end services -->
+
+
+
+<a name="terra/abs/v1beta1/watchlist.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## terra/abs/v1beta1/watchlist.proto
+
+
+
+<a name="terra.abs.v1beta1.Watchlist"></a>
+
+### Watchlist
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `entries` | [WatchlistEntry](#terra.abs.v1beta1.WatchlistEntry) | repeated |  |
+
+
+
+
+
+
+<a name="terra.abs.v1beta1.WatchlistEntry"></a>
+
+### WatchlistEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `address` | [string](#string) |  |  |
+| `blockHeight` | [uint64](#uint64) |  |  |
+| `transacted` | [uint64](#uint64) |  |  |
 
 
 

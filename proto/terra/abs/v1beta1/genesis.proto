@@ -1,0 +1,12 @@
+syntax = "proto3";
+package terra.abs.v1beta1;
+
+import "gogoproto/gogo.proto";
+import "terra/abs/v1beta1/params.proto";
+
+option go_package = "github.com/terra-money/core/x/abs/types";
+
+// GenesisState defines the abs module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+}

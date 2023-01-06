@@ -1,0 +1,22 @@
+syntax = "proto3";
+package terra.abs.v1beta1;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/terra-money/core/x/abs/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc UpdateBreakFactor(MsgUpdateBreakFactor) returns (MsgUpdateBreakFactorResponse);
+}
+
+message MsgUpdateBreakFactor {
+  option (gogoproto.equal)           = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string                   creator     = 1 [(gogoproto.moretags) = "yaml:\"creator\""];
+  string                   value     = 2 [(gogoproto.moretags) = "yaml:\"value\""];
+}
+
+message MsgUpdateBreakFactorResponse {
+}

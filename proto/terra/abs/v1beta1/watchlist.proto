@@ -1,0 +1,17 @@
+syntax = "proto3";
+package terra.abs.v1beta1;
+
+import "gogoproto/gogo.proto";
+import "cosmos/base/v1beta1/coin.proto";
+
+option go_package = "github.com/terra-money/core/x/abs/types";
+
+message Watchlist {
+  repeated WatchlistEntry entries = 1 [(gogoproto.nullable) = false];
+}
+
+message WatchlistEntry {
+  string address = 1 [(gogoproto.moretags) = "yaml:\"address\""];
+  uint64 blockHeight = 2 [(gogoproto.moretags) = "yaml:\"blockheight\""];
+  repeated cosmos.base.v1beta1.Coin coins = 3 [(gogoproto.moretags) = "yaml:\"coins\""];
+}
