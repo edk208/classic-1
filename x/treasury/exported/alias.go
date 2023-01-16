@@ -1,9 +1,10 @@
+// DONTCOVER
+//
 //nolint:deadcode,unused
-//DONTCOVER
 package exported
 
 import (
-	"github.com/terra-money/core/x/treasury/types"
+	"github.com/classic-terra/classic/x/treasury/types"
 )
 
 var (
